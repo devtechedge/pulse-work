@@ -56,23 +56,23 @@ export function ImportExportModal() {
 
         {step === 1 && (
           <div className="space-y-4">
-            <div className="font-bold text-slate-200">Select Export Data Format</div>
+            <div className="font-bold text-slate-900 dark:text-slate-200">Select Export Data Format</div>
             <div className="grid grid-cols-2 gap-3">
               {(['Markdown', 'CSV', 'JSON', 'PDF'] as const).map((fmt) => (
                 <button
                   key={fmt}
                   onClick={() => setFormat(fmt)}
-                  className={`p-4 rounded-xl border text-left flex items-center justify-between font-bold ${
+                  className={`p-4 rounded-xl border text-left flex items-center justify-between font-bold transition-colors ${
                     format === fmt
-                      ? 'bg-cyan-500/20 text-cyan-300 border-cyan-400'
-                      : 'bg-white/5 border-white/10 text-slate-400 hover:text-white'
+                      ? 'bg-cyan-500/20 text-cyan-800 dark:text-cyan-300 border-cyan-500'
+                      : 'bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
                   <span className="flex items-center gap-2">
-                    <FileCode className="w-4 h-4 text-cyan-400" />
+                    <FileCode className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
                     <span>{fmt} Export</span>
                   </span>
-                  {format === fmt && <Check className="w-4 h-4 text-cyan-400" />}
+                  {format === fmt && <Check className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />}
                 </button>
               ))}
             </div>
@@ -88,9 +88,9 @@ export function ImportExportModal() {
 
         {step === 2 && (
           <div className="space-y-4">
-            <div className="font-bold text-slate-200">Export Scope ({format})</div>
-            <div className="p-4 rounded-xl bg-slate-900 border border-white/10 space-y-2">
-              <div className="text-slate-300">
+            <div className="font-bold text-slate-900 dark:text-slate-200">Export Scope ({format})</div>
+            <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 space-y-2">
+              <div className="text-slate-800 dark:text-slate-300">
                 Targeting <strong>{documents.length} Workspace Notebook Pages</strong> and data collections.
               </div>
               <div className="text-[10px] text-slate-500">

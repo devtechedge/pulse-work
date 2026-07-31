@@ -33,12 +33,12 @@ export function AppearanceSettings() {
             onClick={() => setTheme('dark')}
             className={`p-4 rounded-lg border text-left flex items-center justify-between transition-all ${
               theme === 'dark'
-                ? 'bg-slate-950 border-cyan-400 text-cyan-300 ring-1 ring-cyan-400'
-                : 'bg-slate-800 border-transparent text-slate-400'
+                ? 'bg-slate-900 border-cyan-400 text-cyan-300 ring-1 ring-cyan-400'
+                : 'bg-slate-200/70 dark:bg-slate-800 border-transparent text-slate-700 dark:text-slate-400'
             }`}
           >
             <div className="flex items-center gap-2">
-              <Moon className="w-4 h-4 text-cyan-400" />
+              <Moon className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
               <span className="font-bold">Obsidian Dark</span>
             </div>
             {theme === 'dark' && <Check className="w-4 h-4 text-cyan-400" />}
@@ -69,8 +69,8 @@ export function AppearanceSettings() {
             onClick={() => setDensity('normal')}
             className={`p-3 rounded-lg border font-bold ${
               density === 'normal'
-                ? 'bg-cyan-500/20 text-cyan-400 border-cyan-500/40'
-                : 'bg-slate-200 dark:bg-white/5 border-transparent text-slate-400'
+                ? 'bg-cyan-500/20 text-cyan-800 dark:text-cyan-400 border-cyan-500/40'
+                : 'bg-slate-200 dark:bg-white/5 border-transparent text-slate-700 dark:text-slate-400'
             }`}
           >
             Normal Spacing
@@ -79,8 +79,8 @@ export function AppearanceSettings() {
             onClick={() => setDensity('compact')}
             className={`p-3 rounded-lg border font-bold ${
               density === 'compact'
-                ? 'bg-cyan-500/20 text-cyan-400 border-cyan-500/40'
-                : 'bg-slate-200 dark:bg-white/5 border-transparent text-slate-400'
+                ? 'bg-cyan-500/20 text-cyan-800 dark:text-cyan-400 border-cyan-500/40'
+                : 'bg-slate-200 dark:bg-white/5 border-transparent text-slate-700 dark:text-slate-400'
             }`}
           >
             High Density (Compact)

@@ -30,9 +30,9 @@ export function QuickCaptures() {
   return (
     <div className="max-w-3xl mx-auto p-4 font-mono text-xs space-y-6">
       {/* Input Composer */}
-      <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-3 shadow-xl">
-        <div className="font-bold text-slate-200 flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-cyan-400" /> Rapid Scratchpad Capture
+      <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3 shadow-sm dark:shadow-xl">
+        <div className="font-bold text-slate-900 dark:text-slate-200 flex items-center gap-2">
+          <Sparkles className="w-4 h-4 text-cyan-600 dark:text-cyan-400" /> Rapid Scratchpad Capture
         </div>
 
         <textarea
@@ -40,7 +40,7 @@ export function QuickCaptures() {
           value={noteInput}
           onChange={(e) => setNoteInput(e.target.value)}
           placeholder="Type quick thought, link, or scratchpad notes..."
-          className="w-full bg-slate-950 border border-white/10 rounded-lg p-3 text-slate-200 outline-none resize-none placeholder-slate-500 font-mono text-xs"
+          className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-white/10 rounded-lg p-3 text-slate-800 dark:text-slate-200 outline-none resize-none placeholder-slate-400 dark:placeholder-slate-500 font-mono text-xs"
         />
 
         <div className="flex items-center justify-between pt-1">
@@ -51,10 +51,10 @@ export function QuickCaptures() {
               className={`p-2 rounded-lg border font-bold flex items-center gap-1.5 transition-all ${
                 isRecording
                   ? 'bg-rose-500 text-white animate-pulse border-rose-500'
-                  : 'bg-white/5 border-white/10 text-slate-300 hover:text-cyan-400 hover:bg-white/10'
+                  : 'bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-slate-200 dark:hover:bg-white/10'
               }`}
             >
-              <Mic className="w-4 h-4 text-rose-400" />
+              <Mic className="w-4 h-4 text-rose-500 dark:text-rose-400" />
               <span>{isRecording ? 'Recording...' : 'Voice Memo'}</span>
             </button>
 
@@ -66,9 +66,9 @@ export function QuickCaptures() {
                   url: 'pulse.workspace/specs/design-tokens',
                 })
               }
-              className="p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-cyan-400 hover:bg-white/10 flex items-center gap-1.5"
+              className="p-2 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-slate-200 dark:hover:bg-white/10 flex items-center gap-1.5"
             >
-              <LinkIcon className="w-4 h-4 text-indigo-400" />
+              <LinkIcon className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
               <span>Save Link</span>
             </button>
           </div>
@@ -87,14 +87,14 @@ export function QuickCaptures() {
         {quickCaptures.map((cap) => (
           <div
             key={cap.id}
-            className="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2 hover:border-cyan-500/40 transition-colors"
+            className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2 hover:border-cyan-500/40 transition-colors shadow-sm"
           >
             <div className="flex items-center justify-between text-[10px] text-slate-500">
-              <span className="uppercase font-bold text-cyan-400">{cap.type}</span>
+              <span className="uppercase font-bold text-cyan-600 dark:text-cyan-400">{cap.type}</span>
               <span>{cap.time}</span>
             </div>
 
-            <div className="font-medium text-slate-200 text-sm">{cap.content}</div>
+            <div className="font-medium text-slate-900 dark:text-slate-200 text-sm">{cap.content}</div>
 
             {cap.imageUrl && (
               <div className="w-full h-32 rounded-lg overflow-hidden mt-2">
@@ -103,8 +103,8 @@ export function QuickCaptures() {
             )}
 
             {cap.audioDuration && (
-              <div className="p-2.5 rounded bg-slate-950 border border-white/10 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-pink-400 font-bold">
+              <div className="p-2.5 rounded bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-white/10 flex items-center justify-between">
+                <div className="flex items-center gap-2 text-pink-600 dark:text-pink-400 font-bold">
                   <Play className="w-4 h-4 fill-current" />
                   <span>Voice Memo ({cap.audioDuration})</span>
                 </div>
@@ -113,7 +113,7 @@ export function QuickCaptures() {
                     <span
                       key={i}
                       style={{ height: `${h / 4}px` }}
-                      className="w-1 bg-pink-400/60 rounded"
+                      className="w-1 bg-pink-500/60 dark:bg-pink-400/60 rounded"
                     />
                   ))}
                 </div>

@@ -32,14 +32,14 @@ export function ShareModal() {
     >
       <div className="space-y-6 font-mono text-xs">
         {/* Public Web Link Toggle */}
-        <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
+        <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+            <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
               <Globe className="w-5 h-5" />
             </div>
             <div>
-              <div className="font-bold text-slate-100">Share to Web</div>
-              <div className="text-[11px] text-slate-400">
+              <div className="font-bold text-slate-900 dark:text-slate-100">Share to Web</div>
+              <div className="text-[11px] text-slate-600 dark:text-slate-400">
                 Anyone with the link can view this node.
               </div>
             </div>
@@ -48,11 +48,11 @@ export function ShareModal() {
           <button
             onClick={() => setIsPublic(!isPublic)}
             className={`w-12 h-6 rounded-full p-1 transition-colors ${
-              isPublic ? 'bg-cyan-500' : 'bg-slate-800'
+              isPublic ? 'bg-cyan-500' : 'bg-slate-300 dark:bg-slate-800'
             }`}
           >
             <div
-              className={`w-4 h-4 rounded-full bg-slate-950 transition-transform ${
+              className={`w-4 h-4 rounded-full bg-white dark:bg-slate-950 transition-transform shadow-sm ${
                 isPublic ? 'translate-x-6' : 'translate-x-0'
               }`}
             />
@@ -61,12 +61,12 @@ export function ShareModal() {
 
         {/* Copy Share Link */}
         {isPublic && (
-          <div className="flex items-center gap-2 p-2 rounded-lg bg-slate-950 border border-white/10">
+          <div className="flex items-center gap-2 p-2 rounded-lg bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-white/10">
             <input
               type="text"
               readOnly
               value={`https://pulse.workspace/share/${activeDocument?.id || 'doc-1'}`}
-              className="w-full bg-transparent text-slate-300 outline-none px-2 text-[11px]"
+              className="w-full bg-transparent text-slate-800 dark:text-slate-300 outline-none px-2 text-[11px]"
             />
             <button
               onClick={handleCopyLink}
@@ -80,8 +80,8 @@ export function ShareModal() {
 
         {/* Invite Collaborator Form */}
         <div>
-          <div className="font-bold text-slate-200 mb-2 flex items-center gap-2">
-            <UserPlus className="w-4 h-4 text-cyan-400" /> Invite Team Member
+          <div className="font-bold text-slate-900 dark:text-slate-200 mb-2 flex items-center gap-2">
+            <UserPlus className="w-4 h-4 text-cyan-600 dark:text-cyan-400" /> Invite Team Member
           </div>
           <div className="flex gap-2">
             <input
@@ -89,12 +89,12 @@ export function ShareModal() {
               value={inviteEmail}
               onChange={(e) => setInviteEmail(e.target.value)}
               placeholder="Enter email address..."
-              className="flex-1 bg-slate-900 border border-white/10 rounded-lg p-2 text-slate-200 outline-none"
+              className="flex-1 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-lg p-2 text-slate-900 dark:text-slate-200 outline-none"
             />
             <select
               value={role}
               onChange={(e) => setRole(e.target.value as any)}
-              className="bg-slate-900 border border-white/10 rounded-lg px-2 text-slate-200 outline-none"
+              className="bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-lg px-2 text-slate-900 dark:text-slate-200 outline-none"
             >
               <option value="Can View">Can View</option>
               <option value="Can Edit">Can Edit</option>
@@ -114,26 +114,26 @@ export function ShareModal() {
 
         {/* Active Member List */}
         <div>
-          <div className="font-bold text-slate-200 mb-2 flex items-center gap-2">
-            <Shield className="w-4 h-4 text-emerald-400" /> Active Collaborators ({collaborators.length})
+          <div className="font-bold text-slate-900 dark:text-slate-200 mb-2 flex items-center gap-2">
+            <Shield className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Active Collaborators ({collaborators.length})
           </div>
           <div className="space-y-2">
             {collaborators.map((c) => (
               <div
                 key={c.email}
-                className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-center justify-between"
+                className="p-3 rounded-lg bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-300 font-bold flex items-center justify-center border border-cyan-500/30">
+                  <div className="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-700 dark:text-cyan-300 font-bold flex items-center justify-center border border-cyan-500/30">
                     {c.avatar}
                   </div>
                   <div>
-                    <div className="font-bold text-slate-200">{c.name}</div>
-                    <div className="text-[10px] text-slate-400">{c.email}</div>
+                    <div className="font-bold text-slate-900 dark:text-slate-200">{c.name}</div>
+                    <div className="text-[10px] text-slate-500 dark:text-slate-400">{c.email}</div>
                   </div>
                 </div>
 
-                <span className="px-2.5 py-1 rounded bg-slate-900 border border-white/10 text-[10px] text-cyan-300 font-bold">
+                <span className="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-[10px] text-cyan-700 dark:text-cyan-300 font-bold">
                   {c.role}
                 </span>
               </div>
