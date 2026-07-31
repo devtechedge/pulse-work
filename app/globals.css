@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  * {
+    font-family: 'Fira Code', monospace !important;
+  }
+  body {
+    font-family: 'Fira Code', monospace !important;
+  }
+}
+
+:root {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-elevate: #FFFFFF;
+  --border-color: #E2E8F0;
+  --accent-primary: #4F46E5;
+  --accent-secondary: #10B981;
+  --text-primary: #0F172A;
+  --text-muted: #64748B;
+}
+
+.dark {
+  --bg-primary: #0B0C10;
+  --bg-secondary: #16181D;
+  --bg-elevate: #1F222A;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --accent-primary: #00F2FE;
+  --accent-secondary: #38EF7D;
+  --text-primary: #F8FAFC;
+  --text-muted: #94A3B8;
+}
+
+/* Water-Drop Ripple Effect */
+.water-drop-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.water-drop-effect::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(0, 242, 254, 0.35) 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform .4s, opacity .8s;
+}
+
+.water-drop-effect:active::after {
+  transform: scale(0, 0);
+  opacity: .35;
+  transition: 0s;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 242, 254, 0.4);
+}
