@@ -36,28 +36,6 @@ export function Launchpad() {
 
   return (
     <div className="flex-1 overflow-y-auto bg-slate-50 dark:bg-[#0B0C10] font-mono text-slate-900 dark:text-slate-100 p-4 sm:p-8 space-y-8 max-w-6xl mx-auto w-full">
-      {/* Telemetry Bar */}
-      <div className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[11px] text-slate-600 dark:text-slate-400 flex flex-wrap items-center justify-between gap-3 shadow-sm">
-        <div className="flex items-center gap-3">
-          <span className="flex items-center gap-1.5 font-bold text-emerald-600 dark:text-emerald-400">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            Status: Online
-          </span>
-          <span>•</span>
-          <span>Auto-Save: Ready</span>
-          <span>•</span>
-          <span>Storage: Saved</span>
-        </div>
-
-        <button
-          onClick={() => setIsPersonaModalOpen(true)}
-          className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 font-bold hover:bg-cyan-500/20 transition-colors border border-cyan-500/20"
-        >
-          <Sparkles className="w-3.5 h-3.5" />
-          Mode: {persona} Mode
-        </button>
-      </div>
-
       {/* Hero Welcome Header */}
       <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-900 dark:via-[#16181D] dark:to-slate-950 border border-indigo-100 dark:border-cyan-500/30 text-slate-900 dark:text-white shadow-sm dark:shadow-xl space-y-4 relative overflow-hidden">
         <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none text-9xl text-indigo-500 dark:text-white">

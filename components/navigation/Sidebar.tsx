@@ -47,13 +47,8 @@ export function Sidebar() {
           <div className="w-8 h-8 rounded bg-cyan-500/10 dark:bg-cyan-400/20 border border-cyan-500/30 dark:border-cyan-400/40 flex items-center justify-center text-cyan-600 dark:text-cyan-400 font-bold text-sm">
             P
           </div>
-          <div>
-            <div className="font-bold text-slate-900 dark:text-white flex items-center gap-1">
-              Pulse Workspace
-            </div>
-            <div className="text-[10px] text-slate-500 dark:text-slate-400 flex items-center gap-1">
-              v2.0.4 <span className="opacity-40">|</span> Pro Tier
-            </div>
+          <div className="font-bold text-slate-900 dark:text-white flex items-center gap-1">
+            Pulse Workspace
           </div>
         </div>
       </div>
