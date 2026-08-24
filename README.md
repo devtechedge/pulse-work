@@ -2,7 +2,7 @@
 
 Block-based workspace for notes, collections, and deep work. A slash-command editor, Kanban / table / calendar / Gantt views, ⌘K spotlight, flashcards, habits, and a focus timer with procedural ambient noise.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?logo=vercel)](https://pulse-work.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?logo=vercel)](https://pulse-work-indol.vercel.app)
 [![CI](https://github.com/devtechedge/pulse-work/actions/workflows/ci.yml/badge.svg)](https://github.com/devtechedge/pulse-work/actions/workflows/ci.yml)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
@@ -13,7 +13,7 @@ Block-based workspace for notes, collections, and deep work. A slash-command edi
 
 ## Live Demo
 
-**https://pulse-work.vercel.app**
+**https://pulse-work-indol.vercel.app**
 
 > **Status:** Portfolio demo. Notebooks, collections, habits, and the timer live in **React client memory** and reset on refresh. There is no auth backend. Billing screens are simulated (`alert()`). No Gemini key is required.
 
