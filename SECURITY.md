@@ -19,7 +19,7 @@
 | Payments | **Simulated** | Billing settings fire `alert()`. No Stripe, no card vault. |
 | Gemini | **Removed** | `@google/genai` was unused template code and has been dropped. |
 
-**Overall (public demo):** Low residual risk for a hiring-manager walkthrough. Do not treat this as a production workspace.
+**Overall (public demo):** Low residual risk for a public demo walkthrough. Do not treat this as a production workspace.
 
 ---
 
