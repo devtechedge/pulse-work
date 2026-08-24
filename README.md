@@ -23,6 +23,10 @@ This is the **only** public repo for Pulse Workspace.
 
 ## Screenshots
 
+<p align="center">
+  <img src="docs/social-preview.png" alt="Pulse Workspace" width="800">
+</p>
+
 | Launchpad | Editor |
 |-----------|--------|
 | ![Dark launchpad with pinned pages](docs/screenshots/01-launchpad.png) | ![Slash-command notebook editor](docs/screenshots/02-editor.png) |
