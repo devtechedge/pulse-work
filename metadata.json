@@ -1,6 +1,5 @@
 {
   "name": "Pulse Workspace",
-  "description": "Block-based workspace and dynamic collaborative platform built with a high-precision monospace Fira Code design system.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "description": "Block-based workspace for notes, collections, flashcards, habits, and a focus timer. Client-side demo.",
+  "requestFramePermissions": []
 }
