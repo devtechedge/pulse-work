@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, FileText, Folder, User, Clock, ArrowRight, X } from 'lucide-react';
 import { useWorkspace } from '@/context/WorkspaceContext';
+import { matchDocuments } from '@/lib/workspace';
 
 export function SpotlightSearch() {
   const { isSpotlightOpen, setIsSpotlightOpen, documents, setActiveDocumentId, setActiveScreen } =
@@ -25,9 +26,7 @@ export function SpotlightSearch() {
 
   if (!isSpotlightOpen) return null;
 
-  const filteredDocs = documents.filter((doc) =>
-    doc.title.toLowerCase().includes(query.toLowerCase())
-  );
+  const filteredDocs = matchDocuments(documents, query);
 
   return (
     <div
@@ -51,6 +50,7 @@ export function SpotlightSearch() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search workspace nodes, files, or team..."
+            data-testid="spotlight-input"
             className="w-full bg-transparent text-sm text-slate-900 dark:text-slate-100 outline-none placeholder-slate-400 dark:placeholder-slate-500 font-mono"
           />
           <button

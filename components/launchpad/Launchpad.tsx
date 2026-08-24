@@ -35,7 +35,7 @@ export function Launchpad() {
   const pinnedDocs = documents.filter((d) => d.isPinned || d.isFavorite);
 
   return (
-    <div className="flex-1 overflow-y-auto bg-slate-50 dark:bg-[#0B0C10] font-mono text-slate-900 dark:text-slate-100 p-4 sm:p-8 space-y-8 max-w-6xl mx-auto w-full">
+    <div data-testid="launchpad" className="flex-1 overflow-y-auto bg-slate-50 dark:bg-[#0B0C10] font-mono text-slate-900 dark:text-slate-100 p-4 sm:p-8 space-y-8 max-w-6xl mx-auto w-full">
       {/* Hero Welcome Header */}
       <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-900 dark:via-[#16181D] dark:to-slate-950 border border-indigo-100 dark:border-cyan-500/30 text-slate-900 dark:text-white shadow-sm dark:shadow-xl space-y-4 relative overflow-hidden">
         <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none text-9xl text-indigo-500 dark:text-white">
@@ -58,6 +58,7 @@ export function Launchpad() {
         <div className="pt-2 flex flex-wrap gap-3">
           <button
             onClick={() => createDocument('New Page')}
+            data-testid="new-page"
             className="water-drop-effect px-4 py-2.5 rounded-xl bg-indigo-600 text-white dark:bg-cyan-500 dark:text-slate-950 font-bold hover:bg-indigo-700 dark:hover:bg-cyan-400 transition-transform active:scale-95 flex items-center gap-2 text-xs shadow-sm"
           >
             <Plus className="w-4 h-4 font-bold" /> New Page

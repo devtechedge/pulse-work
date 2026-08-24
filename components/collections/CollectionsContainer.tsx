@@ -34,7 +34,7 @@ export function CollectionsContainer() {
   ];
 
   return (
-    <div className="flex-1 overflow-y-auto bg-slate-50 dark:bg-[#0B0C10] font-mono text-slate-900 dark:text-slate-100 p-4 sm:p-8 space-y-6 max-w-7xl mx-auto w-full">
+    <div data-testid="collections" className="flex-1 overflow-y-auto bg-slate-50 dark:bg-[#0B0C10] font-mono text-slate-900 dark:text-slate-100 p-4 sm:p-8 space-y-6 max-w-7xl mx-auto w-full">
       {/* Top Controls Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-white/10">
         <div>

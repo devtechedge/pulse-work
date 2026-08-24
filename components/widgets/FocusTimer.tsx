@@ -63,7 +63,7 @@ export function FocusTimer() {
     }
 
     try {
-      const AudioCtxClass = window.AudioContext || (window as any).webkitAudioContext;
+      const AudioCtxClass = window.AudioContext || (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
       if (!AudioCtxClass) return;
 
       const ctx = new AudioCtxClass();
@@ -234,7 +234,7 @@ export function FocusTimer() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 font-mono text-xs space-y-8">
+    <div data-testid="focus-timer" className="max-w-4xl mx-auto p-6 font-mono text-xs space-y-8">
       {/* Timer Hero Card */}
       <div className="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center relative overflow-hidden shadow-xl">
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-emerald-400 to-indigo-500" />

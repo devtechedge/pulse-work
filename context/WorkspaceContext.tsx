@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState } from 'react';
+import { toggleHabitDay as toggleHabitDayState } from '@/lib/workspace';
 
 export type PersonaType = 'Student' | 'Creator' | 'Planner' | 'Business' | 'Daily Life';
 
@@ -551,15 +552,7 @@ export function WorkspaceProvider({ children }: { children: React.ReactNode }) {
 
   const toggleHabitDay = (habitId: string, dayIndex: number) => {
     setHabits((prev) =>
-      prev.map((h) => {
-        if (h.id === habitId) {
-          const newDays = [...h.weekDays];
-          newDays[dayIndex] = !newDays[dayIndex];
-          const currentCount = newDays.filter(Boolean).length;
-          return { ...h, weekDays: newDays, current: currentCount };
-        }
-        return h;
-      })
+      prev.map((h) => (h.id === habitId ? toggleHabitDayState(h, dayIndex) : h))
     );
   };
 

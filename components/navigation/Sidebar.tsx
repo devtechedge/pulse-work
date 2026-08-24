@@ -40,7 +40,7 @@ export function Sidebar() {
   } = useWorkspace();
 
   return (
-    <aside className="hidden md:flex flex-col w-64 h-screen fixed left-0 top-0 z-40 bg-slate-50 dark:bg-[#16181D] border-r border-slate-200 dark:border-white/10 font-mono text-xs select-none">
+    <aside data-testid="sidebar" className="hidden md:flex flex-col w-64 h-screen fixed left-0 top-0 z-40 bg-slate-50 dark:bg-[#16181D] border-r border-slate-200 dark:border-white/10 font-mono text-xs select-none">
       {/* Workspace Header */}
       <div className="p-4 border-b border-slate-200 dark:border-white/10 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
@@ -71,6 +71,7 @@ export function Sidebar() {
       <div className="p-3 gap-2 flex items-center">
         <button
           onClick={() => setIsSpotlightOpen(true)}
+          data-testid="open-spotlight"
           className="flex-1 flex items-center justify-between px-3 py-1.5 rounded bg-slate-200/60 dark:bg-white/5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10 transition-colors"
         >
           <span className="flex items-center gap-2">
@@ -95,6 +96,7 @@ export function Sidebar() {
         <div className="space-y-0.5">
           <button
             onClick={() => setActiveScreen('launchpad')}
+            data-testid="nav-launchpad"
             className={`w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded transition-colors ${
               activeScreen === 'launchpad'
                 ? 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-semibold'
@@ -107,6 +109,7 @@ export function Sidebar() {
 
           <button
             onClick={() => setActiveScreen('collections')}
+            data-testid="nav-collections"
             className={`w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded transition-colors ${
               activeScreen === 'collections'
                 ? 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-semibold'
@@ -150,6 +153,7 @@ export function Sidebar() {
           <div className="space-y-0.5 mt-1">
             <button
               onClick={() => setActiveScreen('focus')}
+              data-testid="nav-focus"
               className={`w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded transition-colors ${
                 activeScreen === 'focus'
                   ? 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-semibold'

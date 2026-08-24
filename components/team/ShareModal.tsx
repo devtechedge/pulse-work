@@ -93,7 +93,7 @@ export function ShareModal() {
             />
             <select
               value={role}
-              onChange={(e) => setRole(e.target.value as any)}
+              onChange={(e) => setRole(e.target.value as 'Full Access' | 'Can Edit' | 'Can View')}
               className="bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-lg px-2 text-slate-900 dark:text-slate-200 outline-none"
             >
               <option value="Can View">Can View</option>

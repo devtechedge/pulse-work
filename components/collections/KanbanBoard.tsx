@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useWorkspace } from '@/context/WorkspaceContext';
+import { groupByStatus } from '@/lib/workspace';
 import { Plus, Clock, User, DollarSign, ArrowRight } from 'lucide-react';
 
 export function KanbanBoard() {
@@ -13,10 +14,12 @@ export function KanbanBoard() {
     { title: 'Complete', color: 'border-emerald-500/40 bg-emerald-500/5' },
   ];
 
+  const grouped = groupByStatus(collectionItems);
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
+    <div data-testid="kanban-board" className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
       {columns.map((col) => {
-        const items = collectionItems.filter((item) => item.status === col.title);
+        const items = grouped.find((g) => g.status === col.title)?.items ?? [];
         return (
           <div
             key={col.title}

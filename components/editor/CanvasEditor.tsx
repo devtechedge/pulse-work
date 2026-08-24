@@ -25,7 +25,7 @@ export function CanvasEditor() {
 
   if (!activeDocument) {
     return (
-      <div className="flex-1 p-8 text-center font-mono text-slate-400">
+      <div data-testid="canvas-editor" className="flex-1 p-8 text-center font-mono text-slate-400">
         No page selected. Choose a page from the left sidebar or create a new one.
       </div>
     );
@@ -74,7 +74,7 @@ export function CanvasEditor() {
   };
 
   return (
-    <div className="flex-1 overflow-y-auto bg-slate-50 dark:bg-[#0B0C10] font-mono text-slate-900 dark:text-slate-100 p-4 sm:p-8 max-w-4xl mx-auto w-full">
+    <div data-testid="canvas-editor" className="flex-1 overflow-y-auto bg-slate-50 dark:bg-[#0B0C10] font-mono text-slate-900 dark:text-slate-100 p-4 sm:p-8 max-w-4xl mx-auto w-full">
       {/* Cover Image Banner */}
       {activeDocument.coverUrl && (
         <div className="relative w-full h-48 sm:h-64 rounded-xl overflow-hidden mb-8 group border border-slate-200 dark:border-white/10 shadow-lg">
