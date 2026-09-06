@@ -1,6 +1,6 @@
 # Security Assessment — Pulse Workspace
 
-**Date:** 2026-08-24  
+**Date:** 2026-09-06  
 **Scope:** Auth, XSS, injection, CORS, secrets, payments, third-party APIs  
 **Context:** Public deploy is a **portfolio demo**. All notebooks, collections, habits, and timer state live in **React client memory**. There is no production backend on Vercel.
 
@@ -114,3 +114,11 @@ npm audit --omit=dev
 ```
 
 To report a vulnerability, open a GitHub security advisory or an issue.
+
+## Repository visibility
+
+This repository is currently **public** for portfolio review. When the open-source
+build story is no longer needed, **the GitHub repo will go private**. Making the
+repo private reduces source disclosure; it does **not** replace strong production
+secrets, auth allow-lists, webhook signatures, or Vercel/Actions environment
+hygiene. Rotate any credential that was pasted into chat, tickets, or screenshots.
