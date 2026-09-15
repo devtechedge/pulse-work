@@ -1,4 +1,4 @@
-# Security Assessment — Pulse Workspace
+# Security Assessment - Pulse Workspace
 
 **Date:** 2026-09-06  
 **Scope:** Auth, XSS, injection, CORS, secrets, payments, third-party APIs  
@@ -81,7 +81,7 @@ Do **not** run `npm audit fix --force` onto Next 16 to clear Next 15 advisories.
 ## 6. Build / hosting
 
 - `output: "standalone"` is gated off when `VERCEL` is set.
-- `"build": "next build"` — no post-build `cp` into `.next/standalone`.
+- `"build": "next build"` - no post-build `cp` into `.next/standalone`.
 - Node 22 in GitHub Actions.
 
 ---

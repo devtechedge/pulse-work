@@ -58,7 +58,7 @@ This is the **only** public repo for Pulse Workspace.
 | Data | In-memory React context (`context/WorkspaceContext.tsx`) |
 | Audio | Web Audio API (procedural noise, no samples) |
 | Hosting | Vercel |
-| CI | GitHub Actions — Vitest, `tsc`, Playwright |
+| CI | GitHub Actions - Vitest, `tsc`, Playwright |
 
 ---
 
