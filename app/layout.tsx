@@ -1,10 +1,26 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
+const PAGE_TITLE = 'Pulse Workspace';
+const PAGE_DESCRIPTION =
+  'Block-based notes, collections, flashcards, habits, and a focus timer. Client-side demo.';
+const SITE_URL = 'https://pulse-work-indol.vercel.app';
+
 export const metadata: Metadata = {
-  title: 'Pulse Workspace',
-  description:
-    'Block-based notes, collections, flashcards, habits, and a focus timer. Client-side demo.',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  // Shared links (LinkedIn, Slack, email) render a bare URL without these.
+  openGraph: {
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    url: SITE_URL,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+  },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
   },
