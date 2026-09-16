@@ -15,11 +15,13 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION,
     url: SITE_URL,
     type: 'website',
+    images: [{ url: 'https://pulse-work-indol.vercel.app/og.png', width: 1200, height: 630, alt: 'Pulse Workspace' }],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
+    images: ['https://pulse-work-indol.vercel.app/og.png'],
   },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
